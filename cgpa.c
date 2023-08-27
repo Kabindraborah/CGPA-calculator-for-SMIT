@@ -46,7 +46,6 @@ int main() {
         printf("Enter grade for course %d: ", i + 1);
         scanf(" %c", &grade);
 
-
         double gradePoints = gradeToPoints(grade);
 
         if (gradePoints == -1.0) {
@@ -62,6 +61,10 @@ int main() {
     if (totalCredits > 0) {
         double cgpa = totalGradePoints / totalCredits;
         printf("\nYour CGPA is: %.2lf\n", cgpa);
+
+        if (cgpa < 5.0) {
+            printf("You have failed in this semester.\n");
+        }
     } else {
         printf("No courses entered.\n");
     }
